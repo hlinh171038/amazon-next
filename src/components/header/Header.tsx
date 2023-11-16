@@ -5,15 +5,16 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import cartIcon from '../../images/amazon-cart.png'
+import Link from 'next/link';
 
 const Header = () =>{
     return (
         <div className='w-full h-15 bg-amazon_blue text-lightText sticky z-50 top-0 '>
            <div className='h-full w-full inline-flex items-center justify-between gap-1 mdl:gap-3 px-2'>
             {/* logo */}
-            <div className='border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center p-2'>
+            <Link href="/" className='border border-transparent hover:border-white cursor-pointer duration-300 flex items-center justify-center p-2'>
                  <Image src={logo} alt="logo Img" className="object-cover w-28 mt-1"/>
-            </div>
+            </Link>
             {/* deliverry */}
             <div className='text-xs text-gray-100 border border-transparent hover:border-white cursor-pointer duration-300  items-center px-2 hidden xl:inline-flex gap-1'>
                 <div><LocationOnIcon/></div>
@@ -45,7 +46,7 @@ const Header = () =>{
                 <p className='font-bold'> & Favorite</p>
             </div>
             {/* cart */}
-            <div className ="text-xs text-gray-100 relative flex  px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%]">
+            <Link href="/cart" className ="text-xs text-gray-100 relative flex  px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%]">
                 <Image
                     className='w-auto object-cover h-8'
                     src={cartIcon}
@@ -53,7 +54,7 @@ const Header = () =>{
                 />
                 <p className='text-xs text-white mt-3'>Cart</p>
                 <p className='absolute top-0 left-6 text-amazon_yellow text-xs'>0</p>
-            </div>
+            </Link>
            </div>
         </div>
     )
